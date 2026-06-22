@@ -1,0 +1,264 @@
+export interface Bio {
+  name: string;
+  title: string;
+  headline: string;
+  education: string;
+  graduation_year: string;
+  about: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  avatar_url: string;
+}
+
+export interface Milestone {
+  id: string;
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+  type: 'award' | 'education' | 'internship' | 'certification' | string;
+  status: 'completed' | 'upcoming' | 'in-progress' | string;
+}
+
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  image_path: string;
+  category: 'ai-ml' | 'languages' | 'cloud-infra' | 'experience' | string;
+}
+
+export interface Project {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  tech_stack: string[];
+  business_impact: string;
+  repo_url: string;
+  image_path: string;
+}
+
+export interface ProfileData {
+  bio: Bio;
+  milestones: Milestone[];
+  certificates: Certificate[];
+  projects: Project[];
+}
+
+export const FALLBACK_BIO: Bio = {
+  name: "Ahmed Akram Amer",
+  title: "Aspiring AI/ML Engineer & Data Scientist",
+  headline: "Building secure agentic systems, custom tokenizers, and assistive vision pipelines.",
+  education: "Menoufia University",
+  graduation_year: "2026",
+  about: "Driven AI/ML Engineer and Data Scientist specializing in Generative AI, Natural Language Processing, and Computer Vision. Dedicated to designing secure, production-ready AI solutions with robust guardrails, custom tokenization architectures, and real-time inference systems. Committed to bridging academic research with enterprise-grade deployments.",
+  email: "ahmed.akram.amer@example.com",
+  github: "https://github.com/ahmedakram",
+  linkedin: "https://linkedin.com/in/ahmedakram",
+  avatar_url: "/images/profile.png"
+};
+
+export const FALLBACK_MILESTONES: Milestone[] = [
+  {
+    id: "flyrank-intern",
+    title: "AI/ML Engineer Intern",
+    organization: "FlyRank",
+    date: "Upcoming 2026",
+    description: "Selected for an upcoming internship focusing on scalable Generative AI model deployments and microservices.",
+    type: "internship",
+    status: "upcoming"
+  },
+  {
+    id: "siemens-award",
+    title: "Siemens Best-in-Class Award",
+    organization: "Siemens Technology Challenge",
+    date: "2025",
+    description: "Shortlisted for best-in-class honors in recognition of innovative technical solutions and outstanding engineering performance.",
+    type: "award",
+    status: "completed"
+  },
+  {
+    id: "ut-austin-ds",
+    title: "Data Science & GenAI Postgraduate Program",
+    organization: "University of Texas at Austin",
+    date: "2025 - 2026",
+    description: "Advanced coursework in machine learning, deep learning, LLMs, prompt engineering, and agentic workflows.",
+    type: "education",
+    status: "completed"
+  },
+  {
+    id: "aws-ml-specialty",
+    title: "AWS Certified Machine Learning - Specialty Prep",
+    organization: "Amazon Web Services (AWS)",
+    date: "In Progress",
+    description: "Preparing for AWS Certified Machine Learning specialty to demonstrate cloud-native model design, deployment, and optimization capabilities.",
+    type: "certification",
+    status: "in-progress"
+  },
+  {
+    id: "menoufia-degree",
+    title: "B.Sc. in Computer Science / AI Specialty",
+    organization: "Menoufia University",
+    date: "2022 - 2026",
+    description: "Focusing on Algorithm Design, Artificial Intelligence, Database Systems, and Graduation Project in Assistive Vision.",
+    type: "education",
+    status: "in-progress"
+  }
+];
+
+export const FALLBACK_CERTIFICATES: Certificate[] = [
+  {
+    id: "hcia-exam",
+    title: "HCIA-AI V3.5 Course Certificate",
+    issuer: "Huawei",
+    image_path: "/certs/HCIA-Exam.png",
+    category: "ai-ml"
+  },
+  {
+    id: "hcia-course",
+    title: "Huawei HCIA-AI Learning Course Attendance",
+    issuer: "Huawei & iTB",
+    image_path: "/certs/HCIA- Course.jpg",
+    category: "ai-ml"
+  },
+  {
+    id: "ml-specialization",
+    title: "Machine Learning Specialization",
+    issuer: "DeepLearning.AI & Stanford University",
+    image_path: "/certs/ML Specialization.png",
+    category: "ai-ml"
+  },
+  {
+    id: "datacamp-ai-engineer",
+    title: "AI Engineer for Data Scientists Associate",
+    issuer: "DataCamp",
+    image_path: "/certs/AI Engineer.png",
+    category: "ai-ml"
+  },
+  {
+    id: "datacamp-ai-fundamentals",
+    title: "AI Fundamentals Certification",
+    issuer: "DataCamp",
+    image_path: "/certs/AI Fundmentals.png",
+    category: "ai-ml"
+  },
+  {
+    id: "c1-supervised",
+    title: "Supervised Machine Learning: Regression & Classification",
+    issuer: "DeepLearning.AI",
+    image_path: "/certs/C1_Supervised.png",
+    category: "ai-ml"
+  },
+  {
+    id: "c2-advanced",
+    title: "Advanced Learning Algorithms",
+    issuer: "DeepLearning.AI",
+    image_path: "/certs/C2_Advanced.png",
+    category: "ai-ml"
+  },
+  {
+    id: "c3-unsupervised",
+    title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
+    issuer: "DeepLearning.AI",
+    image_path: "/certs/C3_Unsupervised.png",
+    category: "ai-ml"
+  },
+  {
+    id: "sprints-microsoft-camp",
+    title: "Sprints x Microsoft Summer Camp - AI and Machine Learning",
+    issuer: "Sprints & Microsoft",
+    image_path: "/certs/sprints.png",
+    category: "ai-ml"
+  },
+  {
+    id: "oracle-ai-foundations",
+    title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+    issuer: "Oracle University",
+    image_path: "/certs/oracle.png",
+    category: "cloud-infra"
+  },
+  {
+    id: "python-ibm-badge",
+    title: "Python for Data Science and AI (Digital Badge)",
+    issuer: "IBM Developer Skills Network & Coursera",
+    image_path: "/certs/python-ibm-badge.png",
+    category: "languages"
+  },
+  {
+    id: "python-ibm-course",
+    title: "Python for Data Science and AI Course",
+    issuer: "IBM & Coursera",
+    image_path: "/certs/python-ibm.png",
+    category: "languages"
+  },
+  {
+    id: "python-hackerrank",
+    title: "Python (Basic) Skill Certification",
+    issuer: "HackerRank",
+    image_path: "/certs/python.png",
+    category: "languages"
+  },
+  {
+    id: "sql-hackerrank",
+    title: "SQL (Intermediate) Skill Certification",
+    issuer: "HackerRank",
+    image_path: "/certs/sql-intermediate.png",
+    category: "languages"
+  },
+  {
+    id: "ba-forage-simulation",
+    title: "British Airways - Data Science Job Simulation",
+    issuer: "British Airways & Forage",
+    image_path: "/certs/forage.png",
+    category: "experience"
+  },
+  {
+    id: "depi-data-scientist",
+    title: "Digital Egypt Pioneers Program (DEPI) - Data Scientist",
+    issuer: "DEPI & Eyouth & Berlitz (sponsored by MCIT)",
+    image_path: "/certs/Certificate.jpg",
+    category: "experience"
+  }
+];
+
+export const FALLBACK_PROJECTS: Project[] = [
+  {
+    id: "queryguard-ai",
+    name: "Enterprise QueryGuard AI",
+    tagline: "GenAI Database Agent with Dual-Layer RBAC",
+    description: "An enterprise-grade GenAI platform translating plain English or Arabic questions into optimized, executable SQL queries with real-time previews. Powered by Gemini 2.5 Flash, Streamlit, and a robust Role-Based Access Control (RBAC) security layer.",
+    tech_stack: ["Python", "Gemini 2.5 Flash", "Streamlit", "Pandas", "SQLite3", "Poetry"],
+    business_impact: "Democratizes database access for non-technical users while securing destructive operations at both the prompt and database view layers (RBAC).",
+    repo_url: "https://github.com/Ahmed-7-ML/QueryGuard-AI.git",
+    image_path: "/images/QueryGuard_SysArch.png"
+  },
+  {
+    id: "arabic-medical-bpe",
+    name: "Arabic Medical BPE Tokenizer",
+    tagline: "Custom Byte Pair Encoding Tokenizer for Clinical Corpora",
+    description: "A custom-trained Byte Pair Encoding (BPE) tokenizer engineered specifically for Arabic medical terminology. Trained on specialized medical texts to capture complex clinical syntax and terminology which standard tokenizers segment poorly.",
+    tech_stack: ["Python", "Hugging Face Tokenizers", "NLP", "PyTorch", "Arabic Medical Corpus"],
+    business_impact: "Improved downstream LLM clinical phrase comprehension by 25%. Reduced out-of-vocabulary (OOV) tokens to less than 0.5% on medical test datasets.",
+    repo_url: "https://github.com/ahmedakram/arabic-medical-tokenizer",
+    image_path: "/images/tokenizer.png"
+  },
+  {
+    id: "vision-context-app",
+    name: "Vision Assist for Visually Impaired",
+    tagline: "Real-time Computer Vision & LLM Description Pipeline",
+    description: "Graduation project showcasing an end-to-end computer vision assistant. Integrates real-time object detection (YOLOv8) with a captioning engine (BLIP-2) to translate environment feeds into descriptive audio guidance with ultra-low latency.",
+    tech_stack: ["YOLOv8", "PyTorch", "BLIP-2", "OpenCV", "FastAPI", "React Native"],
+    business_impact: "Delivered real-time environment narration and hazard warnings with sub-200ms latency on edge hardware, greatly increasing spatial awareness.",
+    repo_url: "https://github.com/ahmedakram/vision-context-app",
+    image_path: "/images/vision-context.png"
+  }
+];
+
+export const FALLBACK_PROFILE_DATA: ProfileData = {
+  bio: FALLBACK_BIO,
+  milestones: FALLBACK_MILESTONES,
+  certificates: FALLBACK_CERTIFICATES,
+  projects: FALLBACK_PROJECTS
+};

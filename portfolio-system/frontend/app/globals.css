@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #09090b; /* zinc-950 */
+  --foreground: #fafafa; /* zinc-50 */
+  
+  --grid-line: rgba(39, 39, 42, 0.3);
+  --scrollbar-track: #09090b;
+  --scrollbar-thumb: #27272a;
+  --scrollbar-thumb-hover: #3f3f46;
+  
+  /* Primary & Accent colors */
+  --primary: #10b981; /* emerald-500 */
+  --primary-glow: rgba(16, 185, 129, 0.15);
+  --secondary: #6366f1; /* indigo-500 */
+  --secondary-glow: rgba(99, 102, 241, 0.2);
+}
+
+.light {
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #0f172a; /* slate-900 */
+  
+  /* Override built-in Tailwind v4 CSS variables for light mode */
+  --color-zinc-950: #f8fafc;      /* Background: slate-50 */
+  --color-zinc-900: #ffffff;      /* Cards: white */
+  --color-zinc-800: #e2e8f0;      /* Borders: slate-200 */
+  --color-zinc-700: #cbd5e1;      /* Borders focus: slate-300 */
+  --color-zinc-600: #94a3b8;      /* Borders muted: slate-400 */
+  --color-zinc-500: #64748b;      /* Text muted: slate-500 */
+  --color-zinc-400: #475569;      /* Text secondary: slate-600 */
+  --color-zinc-300: #334155;      /* Text body: slate-700 */
+  --color-zinc-200: #1e293b;      /* Text active: slate-800 */
+  --color-zinc-100: #0f172a;      /* Headings: slate-900 */
+  --color-white: #0f172a;         /* Invert white to dark slate */
+  
+  --grid-line: rgba(226, 232, 240, 0.8);
+  --scrollbar-track: #f8fafc;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom background patterns */
+.grid-bg {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+.radial-glow {
+  background: radial-gradient(circle 800px at var(--x, 50%) var(--y, 50%), rgba(99, 102, 241, 0.08), transparent 80%);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.15), 0 0 5px rgba(16, 185, 129, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.3), 0 0 10px rgba(16, 185, 129, 0.15);
+  }
+}
+
+.pulse-neon {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-slow {
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Fade in effects */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
