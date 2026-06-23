@@ -1,0 +1,19 @@
+# Netlify Configuration for portfolio-system (monorepo setup)
+
+[build]
+  # The base directory where the frontend Next.js application resides
+  base = "portfolio-system/frontend"
+
+  # Build command (evaluated relative to the base directory)
+  command = "npm run build"
+
+  # The directory that contains the build output
+  # (evaluated relative to the base directory)
+  publish = ".next"
+
+[build.environment]
+  # Ensure we build using Node 20+
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

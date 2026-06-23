@@ -1,0 +1,15 @@
+# Netlify Configuration for frontend
+
+[build]
+  # Build command
+  command = "npm run build"
+
+  # The directory that contains the build output
+  publish = ".next"
+
+[build.environment]
+  # Ensure we build using Node 20+
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

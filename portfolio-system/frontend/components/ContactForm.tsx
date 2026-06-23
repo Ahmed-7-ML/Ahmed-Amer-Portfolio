@@ -39,7 +39,8 @@ export default function ContactForm() {
 
     try {
       // Attempt backend call
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -58,7 +59,7 @@ export default function ContactForm() {
       } else {
         throw new Error(data.detail || "Server validation failed.");
       }
-    } catch (error: any) {
+    } catch {
       console.warn("Backend server connection failed. Running in standalone local sandbox mode.");
       
       // Standalone simulation fallback for high resilience

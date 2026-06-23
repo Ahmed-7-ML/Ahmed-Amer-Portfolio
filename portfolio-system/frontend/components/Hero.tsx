@@ -75,7 +75,7 @@ export default function Hero({ bio }: HeroProps) {
           {/* Heading */}
           <div>
             <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white leading-none">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-400">{bio.name}</span>
+              Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-400">{bio.name}</span>
             </h1>
             <h2 className="text-xl md:text-2xl font-bold text-zinc-400 mt-2">
               {bio.title}

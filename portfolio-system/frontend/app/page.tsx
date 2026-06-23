@@ -30,15 +30,17 @@ export default function PortfolioHub() {
 
   // Load theme and retrieve portfolio data on mount
   useEffect(() => {
-    // 1. Initial Theme Resolution
-    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    if (savedTheme === "light") {
-      setTheme("light");
-      document.documentElement.classList.add("light");
-    } else {
-      setTheme("dark");
-      document.documentElement.classList.remove("light");
-    }
+    // 1. Initial Theme Resolution (decouple from render to prevent cascading renders)
+    setTimeout(() => {
+      const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+      if (savedTheme === "light") {
+        setTheme("light");
+        document.documentElement.classList.add("light");
+      } else {
+        setTheme("dark");
+        document.documentElement.classList.remove("light");
+      }
+    }, 0);
 
     // 2. Fetch Portfolio Data
     async function fetchPortfolio() {
@@ -61,7 +63,7 @@ export default function PortfolioHub() {
         } else {
           throw new Error(`HTTP Error Status: ${response.status}`);
         }
-      } catch (err) {
+      } catch {
         console.warn("Python FastAPI backend is currently unreachable. Gracefully fallback to client-side data cache.");
         setBackendStatus("standalone");
       } finally {

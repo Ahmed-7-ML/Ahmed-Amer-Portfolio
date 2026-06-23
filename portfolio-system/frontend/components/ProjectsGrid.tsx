@@ -8,7 +8,7 @@ interface ProjectsGridProps {
 }
 
 // Resilient image component that displays a beautiful animated placeholder if asset is missing
-function SafeProjectImage({ src, alt, title }: { src: string; alt: string; title: string }) {
+function SafeProjectImage({ src, alt }: { src: string; alt: string }) {
   const [hasError, setHasError] = useState(false);
 
   if (hasError || !src) {
@@ -85,7 +85,6 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
               <SafeProjectImage
                 src={project.image_path}
                 alt={project.name}
-                title={project.name}
               />
 
               {/* Project Body */}

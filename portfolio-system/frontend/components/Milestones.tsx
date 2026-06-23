@@ -9,7 +9,7 @@ interface MilestonesProps {
 
 export default function Milestones({ milestones }: MilestonesProps) {
   // Helpers to assign style properties based on milestone attributes
-  const getMilestoneConfig = (type: string, status: string) => {
+  const getMilestoneConfig = (type: string) => {
     switch (type) {
       case "internship":
         return {
@@ -101,7 +101,7 @@ export default function Milestones({ milestones }: MilestonesProps) {
         {/* Timeline Container */}
         <div className="relative border-l border-zinc-800/80 ml-4 md:ml-8 pl-6 md:pl-10 space-y-12">
           {milestones.map((milestone) => {
-            const config = getMilestoneConfig(milestone.type, milestone.status);
+            const config = getMilestoneConfig(milestone.type);
             return (
               <div key={milestone.id} className="relative group">
                 
