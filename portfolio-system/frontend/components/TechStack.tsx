@@ -124,6 +124,9 @@ export default function TechStack() {
       ),
       skills: [
         { name: "Python" },
+        { name: "Java" },
+        { name: "C++" },
+        { name: "C#" },
         { name: "SQL (SQL Server, Oracle, SQLite)" }
       ]
     },

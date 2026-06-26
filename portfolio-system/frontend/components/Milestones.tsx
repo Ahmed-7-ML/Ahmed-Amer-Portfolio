@@ -139,7 +139,7 @@ export default function Milestones({ milestones }: MilestonesProps) {
                       </div>
 
                       {/* Description */}
-                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pt-1">
+                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pt-1 whitespace-pre-line">
                         {milestone.description}
                       </p>
                     </div>

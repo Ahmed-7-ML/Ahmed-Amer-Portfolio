@@ -71,31 +71,13 @@ export const FALLBACK_MILESTONES: Milestone[] = [
     status: "upcoming"
   },
   {
-    id: "siemens-award",
-    title: "Siemens Best-in-Class Award",
-    organization: "Siemens Technology Challenge",
-    date: "2025",
-    description: "Shortlisted for best-in-class honors in recognition of innovative technical solutions and outstanding engineering performance.",
-    type: "award",
+    id: "depi-intern",
+    title: "AI & Data Science Intern",
+    organization: "DEPI | EYouth",
+    date: "Jun 2024 – Dec 2024",
+    description: "• Engineered supervised ML models for predictive analytics, achieving 90% accuracy on structured datasets and reducing manual reporting time by 50%.\n• Conducted EDA and feature engineering with Pandas and Seaborn across 10+ high-dimensional datasets, surfacing actionable business insights for stakeholders.\n• Deployed supervised ML models as REST APIs using Flask and Docker, enabling real-time inference for business users and reducing inference latency in production environments.",
+    type: "internship",
     status: "completed"
-  },
-  {
-    id: "ut-austin-ds",
-    title: "Data Science & GenAI Postgraduate Program",
-    organization: "University of Texas at Austin",
-    date: "2025 - 2026",
-    description: "Advanced coursework in machine learning, deep learning, LLMs, prompt engineering, and agentic workflows.",
-    type: "education",
-    status: "completed"
-  },
-  {
-    id: "aws-ml-specialty",
-    title: "AWS Certified Machine Learning - Specialty Prep",
-    organization: "Amazon Web Services (AWS)",
-    date: "In Progress",
-    description: "Preparing for AWS Certified Machine Learning specialty to demonstrate cloud-native model design, deployment, and optimization capabilities.",
-    type: "certification",
-    status: "in-progress"
   },
   {
     id: "menoufia-degree",
@@ -224,6 +206,16 @@ export const FALLBACK_CERTIFICATES: Certificate[] = [
 ];
 
 export const FALLBACK_PROJECTS: Project[] = [
+  {
+    id: "reactify-pdf",
+    name: "ReActify-PDF",
+    tagline: "Enterprise ReAct Agent PDF Chat Application",
+    description: "An enterprise-grade, agentic PDF chatting application utilizing a ReAct (Reasoning and Acting) Agent framework. It ingestion-pipelines documents into a local SQLite-backed Qdrant vector database, calculates embeddings using the Gemini API, and allows users to query documents dynamically with high fidelity in both English and Arabic.",
+    tech_stack: ["React", "FastAPI", "Qdrant", "SQLite", "Google Gemini API", "Python", "ReAct Agent"],
+    business_impact: "Enables secure, high-fidelity multilingual PDF querying and automated ingestion with local vector storage for data sovereignty.",
+    repo_url: "https://github.com/Ahmed-7-ML/ReActify-PDF.git",
+    image_path: "/images/reactify-pdf.jpg"
+  },
   {
     id: "queryguard-ai",
     name: "Enterprise QueryGuard AI",
