@@ -60,7 +60,8 @@ export default function TechStack() {
         { name: "TensorFlow" },
         { name: "Scikit-learn" },
         { name: "XGBoost" },
-        { name: "OpenCV" }
+        { name: "OpenCV" },
+        { name: "Keras" }
       ]
     },
     {
