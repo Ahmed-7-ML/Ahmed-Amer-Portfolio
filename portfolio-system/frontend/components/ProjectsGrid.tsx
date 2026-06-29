@@ -56,10 +56,14 @@ function SafeProjectImage({ src, alt }: { src: string; alt: string }) {
 }
 
 export default function ProjectsGrid({ projects }: ProjectsGridProps) {
-  const agenticProjects = projects.filter((project) => project.category === "agentic-ai");
+  const llmProjects = projects.filter((project) => project.category === "llm-apps");
+  const agenticProjects = projects.filter((project) => project.category === "agentic-apps");
   const mlProjects = projects.filter((project) => project.category === "ml-engineering");
   const otherProjects = projects.filter(
-    (project) => project.category !== "agentic-ai" && project.category !== "ml-engineering"
+    (project) =>
+      project.category !== "llm-apps" &&
+      project.category !== "agentic-apps" &&
+      project.category !== "ml-engineering"
   );
 
   const renderGrid = (projectList: Project[]) => (
@@ -111,7 +115,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
               {/* Business Impact Log */}
               <div className="p-3 rounded-lg bg-emerald-950/20 border border-emerald-500/10 flex items-start space-x-2.5">
                 <svg className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2m0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
                 <div className="flex-1">
                   <h4 className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
@@ -129,7 +133,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
                   href={project.repo_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-1.5 py-2 px-3 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-850 text-zinc-300 hover:text-white text-xs font-semibold transition-all duration-300 w-full text-center"
+                  className="flex items-center justify-center space-x-1.5 py-2 px-3 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-855 text-zinc-300 hover:text-white text-xs font-semibold transition-all duration-300 w-full text-center"
                 >
                   <svg className="h-3.5 w-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
@@ -177,14 +181,35 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
           </p>
         </div>
 
-        {/* 1. Agentic AI & Automation Projects Section */}
+        {/* 1. LLMbased Applications Section */}
+        {llmProjects.length > 0 && (
+          <div className="space-y-8">
+            <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.6)]" />
+                  LLMbased Applications
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-500 mt-1">
+                  Large Language Model integrations, enterprise semantic search, and document reasoning systems.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 self-start md:self-auto">
+                {llmProjects.length} Projects
+              </span>
+            </div>
+            {renderGrid(llmProjects)}
+          </div>
+        )}
+
+        {/* 2. Agentic AI Apps Section */}
         {agenticProjects.length > 0 && (
           <div className="space-y-8">
             <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                  Agentic AI & Automation Projects
+                  Agentic AI Apps
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-500 mt-1">
                   Stateful multi-agent systems, autonomous coding assistants, and automated integrations using n8n, LangGraph, and CrewAI.
@@ -198,14 +223,14 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
           </div>
         )}
 
-        {/* 2. ML Engineering Projects Section */}
+        {/* 3. ML Engineering Section */}
         {mlProjects.length > 0 && (
           <div className="space-y-8">
             <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-indigo-400 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
-                  ML Engineering Projects
+                  ML Engineering
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-500 mt-1">
                   Custom-trained tokenizers, high-throughput inference hosting, and real-time computer vision assistance models.
@@ -219,7 +244,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
           </div>
         )}
 
-        {/* 3. Other/Fallback Projects Section */}
+        {/* 4. Other/Fallback Projects Section */}
         {otherProjects.length > 0 && (
           <div className="space-y-8">
             <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">

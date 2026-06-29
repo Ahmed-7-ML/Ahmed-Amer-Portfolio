@@ -39,7 +39,7 @@ export interface Project {
   repo_url: string;
   image_path: string;
   youtube_url: string;
-  category: 'agentic-ai' | 'ml-engineering' | string;
+  category: 'llm-apps' | 'agentic-apps' | 'ml-engineering' | string;
 }
 
 export interface ProfileData {
@@ -218,7 +218,19 @@ export const FALLBACK_PROJECTS: Project[] = [
     repo_url: "https://github.com/Ahmed-7-ML/ReActify-PDF.git",
     image_path: "/images/reactify-pdf.jpg",
     youtube_url: "https://youtube.com",
-    category: "agentic-ai"
+    category: "llm-apps"
+  },
+  {
+    id: "semantic-search-engine",
+    name: "Semantic Search & Analytics Engine",
+    tagline: "Hybrid Keyword & Vector Search on Multi-Modal Corpora",
+    description: "A hybrid retrieval engine combining BM25 keyword matching with dense vector embeddings to perform semantic search over enterprise knowledge bases. Integrates cross-encoders for reranking results.",
+    tech_stack: ["Pinecone", "Cohere Embeddings", "LangChain", "FastAPI", "Next.js"],
+    business_impact: "Boosted search relevance (NDCG@10) by 35% and cut document retrieval times down to sub-100ms.",
+    repo_url: "https://github.com/Ahmed-7-ML/semantic-search-engine",
+    image_path: "/images/semantic-search.png",
+    youtube_url: "https://youtube.com",
+    category: "llm-apps"
   },
   {
     id: "queryguard-ai",
@@ -230,7 +242,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     repo_url: "https://github.com/Ahmed-7-ML/QueryGuard-AI.git",
     image_path: "/images/QueryGuard_SysArch.png",
     youtube_url: "https://youtu.be/varTjXiQhZg",
-    category: "agentic-ai"
+    category: "agentic-apps"
   },
   {
     id: "n8n-support-automation",
@@ -242,7 +254,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     repo_url: "https://github.com/Ahmed-7-ML/n8n-support-automation",
     image_path: "/images/n8n-workflow.png",
     youtube_url: "https://youtube.com",
-    category: "agentic-ai"
+    category: "agentic-apps"
   },
   {
     id: "langgraph-researcher",
@@ -254,7 +266,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     repo_url: "https://github.com/Ahmed-7-ML/langgraph-researcher",
     image_path: "/images/langgraph-agent.png",
     youtube_url: "https://youtube.com",
-    category: "agentic-ai"
+    category: "agentic-apps"
   },
   {
     id: "crewai-dev-crew",
@@ -266,7 +278,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     repo_url: "https://github.com/Ahmed-7-ML/crewai-dev-crew",
     image_path: "/images/crewai-team.png",
     youtube_url: "https://youtube.com",
-    category: "agentic-ai"
+    category: "agentic-apps"
   },
   {
     id: "arabic-medical-bpe",
