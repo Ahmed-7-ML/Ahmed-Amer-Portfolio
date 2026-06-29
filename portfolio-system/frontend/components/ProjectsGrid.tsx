@@ -181,14 +181,14 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
           </p>
         </div>
 
-        {/* 1. LLMbased Applications Section */}
+        {/* 1. LLM-based Apps Section */}
         {llmProjects.length > 0 && (
           <div className="space-y-8">
             <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.6)]" />
-                  LLMbased Applications
+                  LLM-based Apps
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-500 mt-1">
                   Large Language Model integrations, enterprise semantic search, and document reasoning systems.
@@ -202,14 +202,14 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
           </div>
         )}
 
-        {/* 2. Agentic AI Apps Section */}
+        {/* 2. Agentic AI Engineering Section */}
         {agenticProjects.length > 0 && (
           <div className="space-y-8">
             <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                  Agentic AI Apps
+                  Agentic AI Engineering
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-500 mt-1">
                   Stateful multi-agent systems, autonomous coding assistants, and automated integrations using n8n, LangGraph, and CrewAI.
@@ -223,14 +223,14 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
           </div>
         )}
 
-        {/* 3. ML Engineering Section */}
+        {/* 3. MLOps Section */}
         {mlProjects.length > 0 && (
           <div className="space-y-8">
             <div className="border-b border-zinc-900 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-indigo-400 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
-                  ML Engineering
+                  MLOps
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-500 mt-1">
                   Custom-trained tokenizers, high-throughput inference hosting, and real-time computer vision assistance models.
