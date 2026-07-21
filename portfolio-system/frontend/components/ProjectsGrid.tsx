@@ -128,8 +128,9 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
               </div>
 
               {/* Repository & Demo Action Buttons */}
-              <div className={project.youtube_url ? "grid grid-cols-2 gap-3" : "w-full"}>
-                <a
+              {(project.repo_url || project.youtube_url) && (
+                <div className={project.repo_url && project.youtube_url ? "grid grid-cols-2 gap-3" : "w-full"}>
+                {project.repo_url && <a
                   href={project.repo_url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -140,6 +141,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
                   </svg>
                   <span>Code</span>
                 </a>
+                }
 
                 {project.youtube_url && (
                   <a
@@ -154,7 +156,8 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
                     <span>Demo</span>
                   </a>
                 )}
-              </div>
+                </div>
+              )}
             </div>
 
           </div>
@@ -233,7 +236,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
                   MLOps
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-500 mt-1">
-                  Custom-trained tokenizers, high-throughput inference hosting, and real-time computer vision assistance models.
+                  Applied deep-learning pipelines, ML lifecycle automation, and deployment-ready systems.
                 </p>
               </div>
               <span className="text-[10px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 self-start md:self-auto">
