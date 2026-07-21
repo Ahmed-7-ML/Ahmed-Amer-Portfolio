@@ -51,80 +51,51 @@ export interface ProfileData {
 
 export const FALLBACK_BIO: Bio = {
   name: "Ahmed Akram Amer",
-  title: "Electronics Engineering Graduate | 5+ Production AI Systems | LLM Applications & Multi-Agent Systems",
-  headline: "Electronics Engineering Graduate specializing in 5+ Production AI Systems, LLM Applications & Multi-Agent Systems.",
-  education: "Menoufia University · Bachelor of Electronic Engineering — CSE",
+  title: "AI Engineer | LLM Applications & Multi-Agent Systems",
+  headline: "Building production-ready GenAI systems, from secure Text-to-SQL platforms to multilingual RAG and multi-agent automation.",
+  education: "Menoufia University · B.Sc. Electronic Engineering (CSE)",
   graduation_year: "2026",
-  about: "Electronics Engineering Graduate from Menoufia University (CSE Dept, GPA: 3.71 / 4.0). Engineered 5+ production AI systems with expertise in LLM Applications, Multi-Agent Systems (LangGraph, CrewAI), RAG architectures (Qdrant, Chroma), and MLOps deployment workflows (FastAPI, Docker, MLflow).",
+  about: "Computer Science and Engineering graduate candidate (GPA 3.71/4.0) specializing in LLM applications, multi-agent systems, and GenAI solutions. Delivered production-ready AI systems with LangGraph, CrewAI, RAG pipelines, and Gemini 2.5 Flash, with measurable improvements in accuracy, response time, and manual-work reduction.",
   email: "ahmedakram3ai@gmail.com",
   github: "https://github.com/Ahmed-7-ML",
   linkedin: "https://www.linkedin.com/in/ahmed-akram-kamel-amer",
-  avatar_url: "/Ahmed.png"
+  avatar_url: "/images/profile.png"
 };
 
 export const FALLBACK_MILESTONES: Milestone[] = [
   {
-    id: "flyrank-intern",
-    title: "AI & ML Engineer Intern",
-    organization: "Flyrank.AI",
-    date: "Jul. 1 – Aug. 26, 2026",
-    description: "• Internship — AI and Machine Learning (8 Weeks)\n• Learning ML fundamentals both in theory and in practice.",
-    type: "internship",
-    status: "completed"
-  },
-  {
-    id: "tips-hindawi-intern",
-    title: "AI Engineering Intern",
-    organization: "Tips Hindawi",
-    date: "Jun. 18 – Jul. 18, 2026",
-    description: "• Internship — AI Engineering, Egypt (1 Month)\n• Learned HuggingFace Transformers architecture (Attention Is All You Need), Groq, Streamlit, LangChain, and RAG.\n• Built LLM applications including an HR Q&A Assistant Chatbot and a Custom-PDF RAG application.",
-    type: "internship",
-    status: "completed"
-  },
-  {
-    id: "sair-mlops-intern",
-    title: "MLOps Intern",
-    organization: "SAiR",
-    date: "2025",
-    description: "• Internship — MLOps Fundamentals and Best Practices\n• Learning the fundamentals of ML, the ML lifecycle, MLOps in theory, and best practices.\n• Hands-on tools: FastAPI, Docker, Kubernetes, Contabo, Feast, Prefect, MLflow, AWS.",
-    type: "internship",
-    status: "completed"
-  },
-  {
     id: "depi-intern",
     title: "AI & Data Science Intern",
     organization: "DEPI | EYouth",
-    date: "Jun. 2024 – Dec. 2024",
-    description: "• Internship — AI & Machine Learning Egypt (Remote)\n• Engineered supervised ML models for predictive analytics, achieving 90% accuracy on structured datasets.\n• Reduced manual reporting time by 50% through automated ML pipelines deployed via Flask and Docker.\n• Conducted EDA and feature engineering with Pandas and Seaborn across 10+ high-dimensional datasets.",
+    date: "Jun 2024 – Dec 2024",
+    description: "• Engineered supervised ML models for predictive analytics, achieving 90% accuracy on structured datasets and reducing manual reporting time by 50%.\n• Conducted EDA and feature engineering with Pandas and Seaborn across 10+ high-dimensional datasets, surfacing actionable business insights for stakeholders.\n• Deployed supervised ML models as REST APIs using Flask and Docker, enabling real-time inference for business users and reducing inference latency in production environments.",
     type: "internship",
     status: "completed"
   },
   {
     id: "menoufia-degree",
-    title: "Bachelor of Electronic Engineering — Computer Science & Engineering Department",
+    title: "B.Sc. in Electronic Engineering — Computer Science & Engineering",
     organization: "Menoufia University",
-    date: "Sep. 2021 – Oct. 2026",
-    description: "GPA: 3.71 / 4.0. Shebin el-Kom, Egypt. Expected graduation: October 2026.",
+    date: "2022 - 2026",
+    description: "GPA: 3.71 / 4.0. Expected graduation: October 2026.",
     type: "education",
     status: "in-progress"
-  },
-  {
-    id: "nasa-space-apps",
-    title: "NASA Space Apps Challenge Participant",
-    organization: "NASA Space Apps Challenge — Egypt",
-    date: "Oct. 2024",
-    description: "• Developed a seismic signal detection system for planetary data analysis.\n• Presented the project in a final demo and discussion session, receiving an achievement certificate.",
-    type: "award",
-    status: "completed"
   }
 ];
 
 export const FALLBACK_CERTIFICATES: Certificate[] = [
   {
-    id: "nvidia-llm",
-    title: "Building LLM Applications using Prompt Engineering",
-    issuer: "NVIDIA",
+    id: "hcia-exam",
+    title: "HCIA-AI V3.5 Course Certificate",
+    issuer: "Huawei",
     image_path: "/certs/HCIA-Exam.png",
+    category: "ai-ml"
+  },
+  {
+    id: "hcia-course",
+    title: "Huawei HCIA-AI Learning Course Attendance",
+    issuer: "Huawei & iTB",
+    image_path: "/certs/HCIA- Course.jpg",
     category: "ai-ml"
   },
   {
@@ -142,110 +113,143 @@ export const FALLBACK_CERTIFICATES: Certificate[] = [
     category: "ai-ml"
   },
   {
-    id: "huawei-hcia",
-    title: "HCIA-AI Course Certificate",
-    issuer: "Huawei",
-    image_path: "/certs/HCIA-Exam.png",
+    id: "datacamp-ai-fundamentals",
+    title: "AI Fundamentals Certification",
+    issuer: "DataCamp",
+    image_path: "/certs/AI Fundmentals.png",
     category: "ai-ml"
   },
   {
+    id: "c1-supervised",
+    title: "Supervised Machine Learning: Regression & Classification",
+    issuer: "DeepLearning.AI",
+    image_path: "/certs/C1_Supervised.png",
+    category: "ai-ml"
+  },
+  {
+    id: "c2-advanced",
+    title: "Advanced Learning Algorithms",
+    issuer: "DeepLearning.AI",
+    image_path: "/certs/C2_Advanced.png",
+    category: "ai-ml"
+  },
+  {
+    id: "c3-unsupervised",
+    title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
+    issuer: "DeepLearning.AI",
+    image_path: "/certs/C3_Unsupervised.png",
+    category: "ai-ml"
+  },
+  {
+    id: "sprints-microsoft-camp",
+    title: "Sprints x Microsoft Summer Camp - AI and Machine Learning",
+    issuer: "Sprints & Microsoft",
+    image_path: "/certs/sprints.png",
+    category: "ai-ml"
+  },
+  {
+    id: "python-ibm-badge",
+    title: "Python for Data Science and AI (Digital Badge)",
+    issuer: "IBM Developer Skills Network & Coursera",
+    image_path: "/certs/python-ibm-badge.png",
+    category: "languages"
+  },
+  {
     id: "python-ibm-course",
-    title: "Python for AI and Data Science",
+    title: "Python for Data Science and AI Course",
     issuer: "IBM & Coursera",
     image_path: "/certs/python-ibm.png",
     category: "languages"
   },
   {
     id: "depi-data-scientist",
-    title: "Data Scientist — DEPI & EYouth",
-    issuer: "DEPI & EYouth",
+    title: "Digital Egypt Pioneers Program (DEPI) - Data Scientist",
+    issuer: "DEPI & Eyouth & Berlitz (sponsored by MCIT)",
     image_path: "/certs/Certificate.jpg",
     category: "experience"
-  },
-  {
-    id: "maharatech-dl",
-    title: "Applied Deep Learning",
-    issuer: "MaharaTech",
-    image_path: "/certs/HCIA- Course.jpg",
-    category: "ai-ml"
-  },
-  {
-    id: "sprints-microsoft-camp",
-    title: "AI Camp — Sprints × Microsoft",
-    issuer: "Sprints & Microsoft",
-    image_path: "/certs/sprints.png",
-    category: "ai-ml"
   }
 ];
 
 export const FALLBACK_PROJECTS: Project[] = [
   {
-    id: "queryguard-ai",
-    name: "QueryGuard AI — Enterprise Text-to-SQL Platform",
-    tagline: "GenAI Database Agent with Dual-Layer RBAC",
-    description: "Built a GenAI platform translating English/Arabic questions into optimized SQL queries for non-technical users. Implemented Dual-Layer RBAC: DROP, DELETE, TRUNCATE blocked at both UI and LLM prompt levels. Modular architecture supports one-line migration from SQLite3 to PostgreSQL or Amazon RDS.",
-    tech_stack: ["Python", "Gemini 2.5 Flash", "Streamlit", "SQLite3", "RBAC"],
-    business_impact: "Translates English/Arabic questions into optimized SQL while securing operations with Dual-Layer RBAC.",
-    repo_url: "https://github.com/Ahmed-7-ML/QueryGuard-AI",
-    image_path: "/QueryGuard_SysArch.png",
-    youtube_url: "",
-    category: "agentic-apps"
-  },
-  {
     id: "reactify-pdf",
     name: "ReActify-PDF",
-    tagline: "Chat with PDF RAG Project",
-    description: "Engineered a bilingual (English/Arabic) ReAct agent for PDF Q&A with source-attributed answers. Built lock-free SQLite-backed Qdrant ingestion pipeline achieving document indexing in seconds.",
-    tech_stack: ["Python", "FastAPI", "LangChain", "Qdrant", "SQLite", "Gemini API"],
-    business_impact: "Bilingual ReAct agent for PDF Q&A with source attribution and lock-free Qdrant document indexing.",
-    repo_url: "https://github.com/Ahmed-7-ML/ReActify-PDF",
-    image_path: "/reactify-pdf.jpg",
-    youtube_url: "",
+    tagline: "Enterprise ReAct Agent PDF Chat Application",
+    description: "An enterprise-grade, agentic PDF chatting application utilizing a ReAct (Reasoning and Acting) Agent framework. It ingestion-pipelines documents into a local SQLite-backed Qdrant vector database, calculates embeddings using the Gemini API, and allows users to query documents dynamically with high fidelity in both English and Arabic.",
+    tech_stack: ["React", "FastAPI", "Qdrant", "SQLite", "Google Gemini API", "Python", "ReAct Agent"],
+    business_impact: "Delivers source-attributed English and Arabic answers while indexing documents into a local SQLite-backed Qdrant vector database in seconds.",
+    repo_url: "https://github.com/Ahmed-7-ML/ReActify-PDF.git",
+    image_path: "/images/reactify-pdf.jpg",
+    youtube_url: "https://youtube.com",
     category: "llm-apps"
   },
   {
-    id: "multi-agent-research",
+    id: "queryguard-ai",
+    name: "Enterprise QueryGuard AI",
+    tagline: "GenAI Database Agent with Dual-Layer RBAC",
+    description: "An enterprise-grade GenAI platform translating plain English or Arabic questions into optimized, executable SQL queries with real-time previews. Powered by Gemini 2.5 Flash, Streamlit, and a robust Role-Based Access Control (RBAC) security layer.",
+    tech_stack: ["Python", "Gemini 2.5 Flash", "Streamlit", "Pandas", "SQLite3", "Poetry"],
+    business_impact: "Democratizes database access for non-technical users while securing destructive operations at both the prompt and database view layers (RBAC).",
+    repo_url: "https://github.com/Ahmed-7-ML/QueryGuard-AI.git",
+    image_path: "/images/queryguard.png",
+    youtube_url: "https://youtu.be/varTjXiQhZg",
+    category: "agentic-apps"
+  },
+  {
+    id: "multi-agent-research-writing",
     name: "Multi-Agent Research & Writing System",
-    tagline: "Automated Research & Report Generation Pipeline",
-    description: "Built a multi-agent pipeline cutting research time by ~80%, generating structured reports in under 2 minutes. Integrated Groq LLaMA 3.3 70B achieving GPT-4-comparable output; resolved 6+ integration challenges.",
-    tech_stack: ["Python", "LangGraph", "CrewAI", "FastAPI", "n8n", "Groq LLaMA 3.3"],
-    business_impact: "Cuts research time by ~80%, generating structured reports in under 2 minutes with Groq LLaMA 3.3 70B.",
+    tagline: "Automated Research and Structured Report Generation",
+    description: "Built an end-to-end multi-agent pipeline that connects n8n, FastAPI, LangGraph, and CrewAI. A router dispatches work to specialized research and content-writing agents with AgentOps observability.",
+    tech_stack: ["Python", "LangGraph", "CrewAI", "FastAPI", "n8n", "Groq LLaMA 3.3", "AgentOps"],
+    business_impact: "Cut manual research time by about 80% and generated structured reports in under two minutes.",
     repo_url: "",
     image_path: "",
     youtube_url: "",
     category: "agentic-apps"
   },
   {
-    id: "ai-procurement",
-    name: "AI-Powered Procurement System — Multi-Agent",
-    tagline: "Four-Agent Procurement Automation Pipeline",
-    description: "Designed a 4-agent CrewAI pipeline automating procurement workflow, cutting manual research by 70%. Containerized with Docker; agents compare prices across Amazon Egypt, Jumia, and Noon in real-time.",
+    id: "ai-procurement-system",
+    name: "AI-Powered Procurement System",
+    tagline: "Four-Agent Procurement Automation",
+    description: "Designed a four-agent CrewAI workflow for query generation, product discovery, web scraping, and Bootstrap report generation. Agents compare real-time prices across Amazon Egypt, Jumia, and Noon.",
     tech_stack: ["Python", "CrewAI", "LangChain", "Groq LLaMA 3.3", "Tavily", "AgentOps", "Docker"],
-    business_impact: "Automates procurement workflow cutting manual research by 70% with real-time price comparison.",
+    business_impact: "Cut manual procurement research by 70% with full monitoring of token use, cost, failure rate, and execution traces.",
     repo_url: "",
     image_path: "",
     youtube_url: "",
     category: "agentic-apps"
   },
   {
-    id: "multilingual-rag",
-    name: "Multilingual RAG Chatbot — Customer Support",
-    tagline: "Production RAG Chatbot with MMR Retrieval",
-    description: "Built production RAG chatbot handling Arabic/English queries with MMR retrieval (k=6). Implemented hallucination control via strict system prompting — agent escalates to human support when needed.",
-    tech_stack: ["Python", "LangChain", "Chroma", "Groq", "HuggingFace", "Gradio"],
-    business_impact: "Production RAG chatbot handling Arabic/English queries with MMR retrieval and strict system prompting.",
+    id: "customer-support-chatbot",
+    name: "Customer Support Chatbot",
+    tagline: "Multilingual RAG for Arabic and English Support",
+    description: "Built a production-style RAG chatbot over a PDF knowledge base using multilingual embeddings and MMR retrieval. The chatbot only answers from retrieved context or escalates the request to human support.",
+    tech_stack: ["Python", "LangChain", "Chroma", "Groq", "Hugging Face", "Gradio"],
+    business_impact: "Provided controlled, context-grounded Arabic and English customer support with hallucination guardrails.",
     repo_url: "",
     image_path: "",
     youtube_url: "",
     category: "llm-apps"
   },
   {
-    id: "deep-learning-multi-domain",
-    name: "Deep Learning — Multi-Domain | ML Lifecycle Factory",
-    tagline: "End-to-End PyTorch Pipelines & ML Forge",
-    description: "End-to-end PyTorch pipelines: image classification (CIFAR-10, MNIST), audio classification, breast cancer detection. Architected ML Forge: web platform automating full ML lifecycle, reducing cycle time by 40% via MLflow.",
-    tech_stack: ["PyTorch", "TensorFlow", "Scikit-learn", "Flask", "MLflow", "OpenCV"],
-    business_impact: "Multi-domain classification pipelines and ML Forge platform automating ML lifecycle, cutting cycle time by 40%.",
+    id: "deep-learning-pytorch",
+    name: "Deep Learning with PyTorch",
+    tagline: "Multi-Domain Classification Pipelines",
+    description: "Developed end-to-end PyTorch pipelines for image, audio, e-commerce clothing, and breast-cancer classification, using regularization and inference-ready deployment practices.",
+    tech_stack: ["Python", "PyTorch", "CNNs", "Transfer Learning", "Audio Classification"],
+    business_impact: "Applied reusable deep-learning workflows across multiple real-world classification domains.",
+    repo_url: "",
+    image_path: "",
+    youtube_url: "",
+    category: "ml-engineering"
+  },
+  {
+    id: "ml-forge",
+    name: "ML Lifecycle Factory — ML Forge",
+    tagline: "Automated ML Lifecycle and Deployment Platform",
+    description: "Architected a web platform that automates the ML lifecycle from data ingestion to REST API deployment, using MLflow for experiment tracking.",
+    tech_stack: ["Python", "Flask", "MLflow"],
+    business_impact: "Reduced the overall ML cycle time by 40% through a factory-style pipeline.",
     repo_url: "",
     image_path: "",
     youtube_url: "",
