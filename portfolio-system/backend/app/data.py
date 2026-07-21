@@ -218,9 +218,9 @@ CERTIFICATES_RECORDS = [
         category="experience"
     ),
     Certificate(
-        id="ai-credentials-capture",
-        title="AI & Data Science Professional Certificate",
-        issuer="Professional Certification",
+        id="nvidia-prompt-engineering",
+        title="Building LLM Apps using Prompt Engineering",
+        issuer="Nvidia",
         image_path="/certs/Capture.PNG",
         category="ai-ml"
     )
@@ -324,8 +324,8 @@ PROJECTS_RECORDS = [
         ),
         tech_stack=["Python", "Flask", "MLflow"],
         business_impact="Reduced the overall ML cycle time by 40% through a factory-style pipeline.",
-        repo_url="",
-        image_path="",
+        repo_url="https://github.com/Ahmed-7-ML/MLForge.git",
+        image_path="/images/ml-forge.png",
         youtube_url="",
         category="ml-engineering"
     )

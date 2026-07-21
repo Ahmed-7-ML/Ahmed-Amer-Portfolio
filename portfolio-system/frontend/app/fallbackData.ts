@@ -197,9 +197,9 @@ export const FALLBACK_CERTIFICATES: Certificate[] = [
     category: "experience"
   },
   {
-    id: "ai-credentials-capture",
-    title: "AI & Data Science Professional Certificate",
-    issuer: "Professional Certification",
+    id: "nvidia-prompt-engineering",
+    title: "Building LLM Apps using Prompt Engineering",
+    issuer: "Nvidia",
     image_path: "/certs/Capture.PNG",
     category: "ai-ml"
   }
@@ -285,8 +285,8 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: "Architected a web platform that automates the ML lifecycle from data ingestion to REST API deployment, using MLflow for experiment tracking.",
     tech_stack: ["Python", "Flask", "MLflow"],
     business_impact: "Reduced the overall ML cycle time by 40% through a factory-style pipeline.",
-    repo_url: "",
-    image_path: "",
+    repo_url: "https://github.com/Ahmed-7-ML/MLForge.git",
+    image_path: "/images/ml-forge.png",
     youtube_url: "",
     category: "ml-engineering"
   }
