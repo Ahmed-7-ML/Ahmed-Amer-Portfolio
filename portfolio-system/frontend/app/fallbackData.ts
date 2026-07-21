@@ -64,6 +64,33 @@ export const FALLBACK_BIO: Bio = {
 
 export const FALLBACK_MILESTONES: Milestone[] = [
   {
+    id: "flyrank-intern",
+    title: "AI & ML Engineer Intern",
+    organization: "Flyrank.AI",
+    date: "Jul 1 – Aug 26, 2026",
+    description: "Internship — AI and Machine Learning (8 Weeks)\n• Learning ML fundamentals both in theory and in practice.",
+    type: "internship",
+    status: "in-progress"
+  },
+  {
+    id: "tips-hindawi-intern",
+    title: "AI Engineering Intern",
+    organization: "Tips Hindawi",
+    date: "Jun 18 – Jul 18, 2026",
+    description: "Internship — AI Engineering, Egypt (1 Month)\n• Learned HuggingFace Transformers architecture (Attention Is All You Need), Groq, Streamlit, LangChain, and RAG.\n• Built LLM applications including an HR Q&A Assistant Chatbot and a Custom-PDF RAG application.",
+    type: "internship",
+    status: "completed"
+  },
+  {
+    id: "sair-mlops-intern",
+    title: "MLOps Intern",
+    organization: "SAiR",
+    date: "2026",
+    description: "Internship — MLOps Fundamentals and Best Practices\n• Learning the fundamentals of ML, the ML lifecycle, MLOps in theory, and best practices.\n• Hands-on tools: FastAPI, Docker, Kubernetes, Contabo, Feast, Prefect, MLflow, AWS",
+    type: "internship",
+    status: "in-progress"
+  },
+  {
     id: "depi-intern",
     title: "AI & Data Science Intern",
     organization: "DEPI | EYouth",
