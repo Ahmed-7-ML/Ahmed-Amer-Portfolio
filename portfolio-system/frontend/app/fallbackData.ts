@@ -55,11 +55,11 @@ export const FALLBACK_BIO: Bio = {
   headline: "Building production-ready GenAI systems, from secure Text-to-SQL platforms to multilingual RAG and multi-agent automation.",
   education: "Menoufia University · B.Sc. Electronic Engineering (CSE)",
   graduation_year: "2026",
-  about: "Computer Science and Engineering graduate candidate (GPA 3.71/4.0) specializing in LLM applications, multi-agent systems, and GenAI solutions. Delivered production-ready AI systems with LangGraph, CrewAI, RAG pipelines, and Gemini 2.5 Flash, with measurable improvements in accuracy, response time, and manual-work reduction.",
+  about: "Computer Science and Engineering candidate (GPA 3.71/4.0) specializing in LLM applications, multi-agent systems, and GenAI solutions. Delivered production-ready AI systems with LangGraph, CrewAI, RAG pipelines, and Gemini 2.5 Flash, with measurable improvements in accuracy, response time, and manual-work reduction.",
   email: "ahmedakram3ai@gmail.com",
   github: "https://github.com/Ahmed-7-ML",
   linkedin: "https://www.linkedin.com/in/ahmed-akram-kamel-amer",
-  avatar_url: "/images/profile.png"
+  avatar_url: "/images/Ahmed.png"
 };
 
 export const FALLBACK_MILESTONES: Milestone[] = [
@@ -148,6 +148,13 @@ export const FALLBACK_CERTIFICATES: Certificate[] = [
     category: "ai-ml"
   },
   {
+    id: "oracle-ai-foundations",
+    title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+    issuer: "Oracle University",
+    image_path: "/certs/oracle.png",
+    category: "cloud-infra"
+  },
+  {
     id: "python-ibm-badge",
     title: "Python for Data Science and AI (Digital Badge)",
     issuer: "IBM Developer Skills Network & Coursera",
@@ -162,27 +169,43 @@ export const FALLBACK_CERTIFICATES: Certificate[] = [
     category: "languages"
   },
   {
+    id: "python-hackerrank",
+    title: "Python (Basic) Skill Certification",
+    issuer: "HackerRank",
+    image_path: "/certs/python.png",
+    category: "languages"
+  },
+  {
+    id: "sql-hackerrank",
+    title: "SQL (Intermediate) Skill Certification",
+    issuer: "HackerRank",
+    image_path: "/certs/sql-intermediate.png",
+    category: "languages"
+  },
+  {
+    id: "ba-forage-simulation",
+    title: "British Airways - Data Science Job Simulation",
+    issuer: "British Airways & Forage",
+    image_path: "/certs/forage.png",
+    category: "experience"
+  },
+  {
     id: "depi-data-scientist",
     title: "Digital Egypt Pioneers Program (DEPI) - Data Scientist",
-    issuer: "DEPI & Eyouth & Berlitz (sponsored by MCIT)",
+    issuer: "DEPI & EYouth & Berlitz (sponsored by MCIT)",
     image_path: "/certs/Certificate.jpg",
     category: "experience"
+  },
+  {
+    id: "ai-credentials-capture",
+    title: "AI & Data Science Professional Certificate",
+    issuer: "Professional Certification",
+    image_path: "/certs/Capture.PNG",
+    category: "ai-ml"
   }
 ];
 
 export const FALLBACK_PROJECTS: Project[] = [
-  {
-    id: "reactify-pdf",
-    name: "ReActify-PDF",
-    tagline: "Enterprise ReAct Agent PDF Chat Application",
-    description: "An enterprise-grade, agentic PDF chatting application utilizing a ReAct (Reasoning and Acting) Agent framework. It ingestion-pipelines documents into a local SQLite-backed Qdrant vector database, calculates embeddings using the Gemini API, and allows users to query documents dynamically with high fidelity in both English and Arabic.",
-    tech_stack: ["React", "FastAPI", "Qdrant", "SQLite", "Google Gemini API", "Python", "ReAct Agent"],
-    business_impact: "Delivers source-attributed English and Arabic answers while indexing documents into a local SQLite-backed Qdrant vector database in seconds.",
-    repo_url: "https://github.com/Ahmed-7-ML/ReActify-PDF.git",
-    image_path: "/images/reactify-pdf.jpg",
-    youtube_url: "https://youtube.com",
-    category: "llm-apps"
-  },
   {
     id: "queryguard-ai",
     name: "Enterprise QueryGuard AI",
@@ -191,9 +214,21 @@ export const FALLBACK_PROJECTS: Project[] = [
     tech_stack: ["Python", "Gemini 2.5 Flash", "Streamlit", "Pandas", "SQLite3", "Poetry"],
     business_impact: "Democratizes database access for non-technical users while securing destructive operations at both the prompt and database view layers (RBAC).",
     repo_url: "https://github.com/Ahmed-7-ML/QueryGuard-AI.git",
-    image_path: "/images/queryguard.png",
+    image_path: "/images/QueryGuard_SysArch.png",
     youtube_url: "https://youtu.be/varTjXiQhZg",
     category: "agentic-apps"
+  },
+  {
+    id: "reactify-pdf",
+    name: "ReActify-PDF",
+    tagline: "Enterprise ReAct Agent PDF Chat Application",
+    description: "An enterprise-grade, agentic PDF chatting application utilizing a ReAct (Reasoning and Acting) Agent framework. Ingests documents into a local SQLite-backed Qdrant vector database, calculates embeddings using the Gemini API, and enables dynamic high-fidelity querying in both English and Arabic.",
+    tech_stack: ["React", "FastAPI", "Qdrant", "SQLite", "Google Gemini API", "Python", "ReAct Agent"],
+    business_impact: "Delivers source-attributed English and Arabic answers while indexing documents into a local SQLite-backed Qdrant vector database in seconds.",
+    repo_url: "https://github.com/Ahmed-7-ML/ReActify-PDF.git",
+    image_path: "/images/reactify-pdf.jpg",
+    youtube_url: "",
+    category: "llm-apps"
   },
   {
     id: "multi-agent-research-writing",
@@ -263,3 +298,4 @@ export const FALLBACK_PROFILE_DATA: ProfileData = {
   certificates: FALLBACK_CERTIFICATES,
   projects: FALLBACK_PROJECTS
 };
+

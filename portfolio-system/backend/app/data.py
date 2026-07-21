@@ -63,32 +63,23 @@ class ProfileData(BaseModel):
 
 BIO_RECORD = Bio(
     name="Ahmed Akram Amer",
-    title="Aspiring AI/ML Engineer & Data Scientist",
-    headline="Building secure agentic systems, custom tokenizers, and assistive vision pipelines.",
-    education="Menoufia University",
+    title="AI Engineer | LLM Applications & Multi-Agent Systems",
+    headline="Building production-ready GenAI systems, from secure Text-to-SQL platforms to multilingual RAG and multi-agent automation.",
+    education="Menoufia University · B.Sc. Electronic Engineering (CSE)",
     graduation_year="2026",
     about=(
-        "Driven AI/ML Engineer and Data Scientist specializing in Generative AI, Natural Language "
-        "Processing, and Computer Vision. Dedicated to designing secure, production-ready AI solutions "
-        "with robust guardrails, custom tokenization architectures, and real-time inference systems. "
-        "Committed to bridging academic research with enterprise-grade deployments."
+        "Computer Science and Engineering candidate (GPA 3.71/4.0) specializing in LLM applications, "
+        "multi-agent systems, and GenAI solutions. Delivered production-ready AI systems with LangGraph, "
+        "CrewAI, RAG pipelines, and Gemini 2.5 Flash, with measurable improvements in accuracy, "
+        "response time, and manual-work reduction."
     ),
-    email="ahmed.akram.amer@example.com",
-    github="https://github.com/ahmedakram",
-    linkedin="https://linkedin.com/in/ahmedakram",
-    avatar_url="/images/profile.png"
+    email="ahmedakram3ai@gmail.com",
+    github="https://github.com/Ahmed-7-ML",
+    linkedin="https://www.linkedin.com/in/ahmed-akram-kamel-amer",
+    avatar_url="/images/Ahmed.png"
 )
 
 MILESTONES_RECORDS = [
-    Milestone(
-        id="flyrank-intern",
-        title="AI/ML Engineer Intern",
-        organization="FlyRank",
-        date="Upcoming 2026",
-        description="Selected for an upcoming internship focusing on scalable Generative AI model deployments and microservices.",
-        type="internship",
-        status="upcoming"
-    ),
     Milestone(
         id="depi-intern",
         title="AI & Data Science Intern",
@@ -104,10 +95,10 @@ MILESTONES_RECORDS = [
     ),
     Milestone(
         id="menoufia-degree",
-        title="B.Sc. in Computer Science / AI Specialty",
+        title="B.Sc. in Electronic Engineering — Computer Science & Engineering",
         organization="Menoufia University",
         date="2022 - 2026",
-        description="Focusing on Algorithm Design, Artificial Intelligence, Database Systems, and Graduation Project in Assistive Vision.",
+        description="GPA: 3.71 / 4.0. Expected graduation: October 2026.",
         type="education",
         status="in-progress"
     )
@@ -222,43 +213,20 @@ CERTIFICATES_RECORDS = [
     Certificate(
         id="depi-data-scientist",
         title="Digital Egypt Pioneers Program (DEPI) - Data Scientist",
-        issuer="DEPI & Eyouth & Berlitz (sponsored by MCIT)",
+        issuer="DEPI & EYouth & Berlitz (sponsored by MCIT)",
         image_path="/certs/Certificate.jpg",
         category="experience"
+    ),
+    Certificate(
+        id="ai-credentials-capture",
+        title="AI & Data Science Professional Certificate",
+        issuer="Professional Certification",
+        image_path="/certs/Capture.PNG",
+        category="ai-ml"
     )
 ]
 
 PROJECTS_RECORDS = [
-    Project(
-        id="reactify-pdf",
-        name="ReActify-PDF",
-        tagline="Enterprise ReAct Agent PDF Chat Application",
-        description=(
-            "An enterprise-grade, agentic PDF chatting application utilizing a ReAct (Reasoning and Acting) Agent framework. "
-            "It ingestion-pipelines documents into a local SQLite-backed Qdrant vector database, calculates embeddings using "
-            "the Gemini API, and allows users to query documents dynamically with high fidelity in both English and Arabic."
-        ),
-        tech_stack=["React", "FastAPI", "Qdrant", "SQLite", "Google Gemini API", "Python", "ReAct Agent"],
-        business_impact="Enables secure, high-fidelity multilingual PDF querying and automated ingestion with local vector storage for data sovereignty.",
-        repo_url="https://github.com/Ahmed-7-ML/ReActify-PDF.git",
-        image_path="/images/reactify-pdf.jpg",
-        youtube_url="https://youtube.com",
-        category="llm-apps"
-    ),
-    Project(
-        id="semantic-search-engine",
-        name="Semantic Search & Analytics Engine",
-        tagline="Hybrid Keyword & Vector Search on Multi-Modal Corpora",
-        description=(
-            "A hybrid retrieval engine combining BM25 keyword matching with dense vector embeddings to perform semantic search over enterprise knowledge bases. Integrates cross-encoders for reranking results."
-        ),
-        tech_stack=["Pinecone", "Cohere Embeddings", "LangChain", "FastAPI", "Next.js"],
-        business_impact="Boosted search relevance (NDCG@10) by 35% and cut document retrieval times down to sub-100ms.",
-        repo_url="https://github.com/Ahmed-7-ML/semantic-search-engine",
-        image_path="/images/semantic-search.png",
-        youtube_url="https://youtube.com",
-        category="llm-apps"
-    ),
     Project(
         id="queryguard-ai",
         name="Enterprise QueryGuard AI",
@@ -276,95 +244,89 @@ PROJECTS_RECORDS = [
         category="agentic-apps"
     ),
     Project(
-        id="n8n-support-automation",
-        name="n8n Customer Support Automation",
-        tagline="Automated Lead Enrichment & AI Ticket Router",
+        id="reactify-pdf",
+        name="ReActify-PDF",
+        tagline="Enterprise ReAct Agent PDF Chat Application",
         description=(
-            "A production-grade n8n automation workflow that listens to incoming support tickets, routes them via an LLM classifier, "
-            "enriches CRM leads using Clearbit APIs, and posts auto-generated draft replies to Slack and Zendesk."
+            "An enterprise-grade, agentic PDF chatting application utilizing a ReAct (Reasoning and Acting) Agent framework. "
+            "Ingests documents into a local SQLite-backed Qdrant vector database, calculates embeddings using "
+            "the Gemini API, and allows users to query documents dynamically with high fidelity in both English and Arabic."
         ),
-        tech_stack=["n8n", "OpenAI API", "PostgreSQL", "Slack API", "Zendesk API"],
-        business_impact="Reduced average response time by 75% and automated manual triage for over 10,000+ support leads monthly.",
-        repo_url="https://github.com/Ahmed-7-ML/n8n-support-automation",
-        image_path="/images/n8n-workflow.png",
-        youtube_url="https://youtube.com",
+        tech_stack=["React", "FastAPI", "Qdrant", "SQLite", "Google Gemini API", "Python", "ReAct Agent"],
+        business_impact="Delivers source-attributed English and Arabic answers while indexing documents into a local SQLite-backed Qdrant vector database in seconds.",
+        repo_url="https://github.com/Ahmed-7-ML/ReActify-PDF.git",
+        image_path="/images/reactify-pdf.jpg",
+        youtube_url="",
+        category="llm-apps"
+    ),
+    Project(
+        id="multi-agent-research-writing",
+        name="Multi-Agent Research & Writing System",
+        tagline="Automated Research and Structured Report Generation",
+        description=(
+            "Built an end-to-end multi-agent pipeline that connects n8n, FastAPI, LangGraph, and CrewAI. A router dispatches work to specialized research and content-writing agents with AgentOps observability."
+        ),
+        tech_stack=["Python", "LangGraph", "CrewAI", "FastAPI", "n8n", "Groq LLaMA 3.3", "AgentOps"],
+        business_impact="Cut manual research time by about 80% and generated structured reports in under two minutes.",
+        repo_url="",
+        image_path="",
+        youtube_url="",
         category="agentic-apps"
     ),
     Project(
-        id="langgraph-researcher",
-        name="LangGraph Multi-Agent Researcher",
-        tagline="Self-Correcting Multi-Agent Content Generation System",
+        id="ai-procurement-system",
+        name="AI-Powered Procurement System",
+        tagline="Four-Agent Procurement Automation",
         description=(
-            "A stateful multi-agent system built using LangGraph to perform web research, synthesize information, draft reports, "
-            "and self-correct based on human-in-the-loop validation or automated reflection steps."
+            "Designed a four-agent CrewAI workflow for query generation, product discovery, web scraping, and Bootstrap report generation. Agents compare real-time prices across Amazon Egypt, Jumia, and Noon."
         ),
-        tech_stack=["LangGraph", "LangChain", "Tavily Search API", "Python", "Anthropic Claude"],
-        business_impact="Enables autonomous generation of comprehensive, fact-checked research papers with 98% factual accuracy verified by critique agents.",
-        repo_url="https://github.com/Ahmed-7-ML/langgraph-researcher",
-        image_path="/images/langgraph-agent.png",
-        youtube_url="https://youtube.com",
+        tech_stack=["Python", "CrewAI", "LangChain", "Groq LLaMA 3.3", "Tavily", "AgentOps", "Docker"],
+        business_impact="Cut manual procurement research by 70% with full monitoring of token use, cost, failure rate, and execution traces.",
+        repo_url="",
+        image_path="",
+        youtube_url="",
         category="agentic-apps"
     ),
     Project(
-        id="crewai-dev-crew",
-        name="CrewAI Autonomous Dev Crew",
-        tagline="Hierarchical Multi-Agent Crew for Automated Code Generation",
+        id="customer-support-chatbot",
+        name="Customer Support Chatbot",
+        tagline="Multilingual RAG for Arabic and English Support",
         description=(
-            "An autonomous agent team composed of a Product Manager Agent, a Senior Developer Agent, and a QA Tester Agent cooperating "
-            "via CrewAI. Generates complete, lint-checked web components from user stories."
+            "Built a production-style RAG chatbot over a PDF knowledge base using multilingual embeddings and MMR retrieval. The chatbot only answers from retrieved context or escalates the request to human support."
         ),
-        tech_stack=["CrewAI", "Python", "LlamaIndex", "Git API", "ChromaDB"],
-        business_impact="Accelerated prototyping cycle from 3 days to under 15 minutes with automated unit test generation and syntax verification.",
-        repo_url="https://github.com/Ahmed-7-ML/crewai-dev-crew",
-        image_path="/images/crewai-team.png",
-        youtube_url="https://youtube.com",
-        category="agentic-apps"
+        tech_stack=["Python", "LangChain", "Chroma", "Groq", "Hugging Face", "Gradio"],
+        business_impact="Provided controlled, context-grounded Arabic and English customer support with hallucination guardrails.",
+        repo_url="",
+        image_path="",
+        youtube_url="",
+        category="llm-apps"
     ),
     Project(
-        id="arabic-medical-bpe",
-        name="Arabic Medical BPE Tokenizer",
-        tagline="Custom Byte Pair Encoding Tokenizer for Clinical Corpora",
+        id="deep-learning-pytorch",
+        name="Deep Learning with PyTorch",
+        tagline="Multi-Domain Classification Pipelines",
         description=(
-            "A custom-trained Byte Pair Encoding (BPE) tokenizer engineered specifically for Arabic medical "
-            "terminology. Trained on specialized medical texts to capture complex clinical syntax and "
-            "terminology which standard tokenizers segment poorly."
+            "Developed end-to-end PyTorch pipelines for image, audio, e-commerce clothing, and breast-cancer classification, using regularization and inference-ready deployment practices."
         ),
-        tech_stack=["Python", "Hugging Face Tokenizers", "NLP", "PyTorch", "Arabic Medical Corpus"],
-        business_impact="Improved downstream LLM clinical phrase comprehension by 25%. Reduced out-of-vocabulary (OOV) tokens to less than 0.5% on medical test datasets.",
-        repo_url="https://github.com/ahmedakram/arabic-medical-tokenizer",
-        image_path="/images/tokenizer.png",
-        youtube_url="https://youtube.com",
+        tech_stack=["Python", "PyTorch", "CNNs", "Transfer Learning", "Audio Classification"],
+        business_impact="Applied reusable deep-learning workflows across multiple real-world classification domains.",
+        repo_url="",
+        image_path="",
+        youtube_url="",
         category="ml-engineering"
     ),
     Project(
-        id="vision-context-app",
-        name="Vision Assist for Visually Impaired",
-        tagline="Real-time Computer Vision & LLM Description Pipeline",
+        id="ml-forge",
+        name="ML Lifecycle Factory — ML Forge",
+        tagline="Automated ML Lifecycle and Deployment Platform",
         description=(
-            "Graduation project showcasing an end-to-end computer vision assistant. Integrates real-time "
-            "object detection (YOLOv8) with a captioning engine (BLIP-2) to translate environment feeds "
-            "into descriptive audio guidance with ultra-low latency."
+            "Architected a web platform that automates the ML lifecycle from data ingestion to REST API deployment, using MLflow for experiment tracking."
         ),
-        tech_stack=["YOLOv8", "PyTorch", "BLIP-2", "OpenCV", "FastAPI", "React Native"],
-        business_impact="Delivered real-time environment narration and hazard warnings with sub-200ms latency on edge hardware, greatly increasing spatial awareness.",
-        repo_url="https://github.com/ahmedakram/vision-context-app",
-        image_path="/images/vision-context.png",
-        youtube_url="https://youtube.com",
-        category="ml-engineering"
-    ),
-    Project(
-        id="llm-inference-pipeline",
-        name="Low-Latency LLM Inference Pipeline",
-        tagline="TensorRT-LLM & vLLM Serving Infrastructure on Kubernetes",
-        description=(
-            "High-performance inference engine hosting fine-tuned Llama-3 models. Features dynamic batching, "
-            "paged attention, and FP8 quantization for real-time customer-facing applications."
-        ),
-        tech_stack=["vLLM", "TensorRT-LLM", "Docker", "Kubernetes", "Triton Server", "Prometheus"],
-        business_impact="Reduced inference latency by 45% and doubled throughput (tokens/sec) while lowering cloud compute costs by 30%.",
-        repo_url="https://github.com/Ahmed-7-ML/llm-inference-pipeline",
-        image_path="/images/inference-pipeline.png",
-        youtube_url="https://youtube.com",
+        tech_stack=["Python", "Flask", "MLflow"],
+        business_impact="Reduced the overall ML cycle time by 40% through a factory-style pipeline.",
+        repo_url="",
+        image_path="",
+        youtube_url="",
         category="ml-engineering"
     )
 ]
@@ -377,3 +339,4 @@ def get_portfolio_profile() -> ProfileData:
         certificates=CERTIFICATES_RECORDS,
         projects=PROJECTS_RECORDS
     )
+
