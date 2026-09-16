@@ -163,7 +163,9 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [selectedSkillCategory, setSelectedSkillCategory] = useState("ALL");
   const [selectedCert, setSelectedCert] = useState<CertificateItem | null>(null);
+  const [sendingForm, setSendingForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   useEffect(() => {
@@ -171,12 +173,31 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      setFormSubmitted(true);
-      setTimeout(() => setFormSubmitted(false), 5000);
-      setFormData({ name: "", email: "", message: "" });
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    setSendingForm(true);
+    setFormError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+      const data = await res.json();
+      if (data.success) {
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setFormSubmitted(false), 8000);
+      } else {
+        setFormError(data.error || "Failed to send message. Please try again.");
+      }
+    } catch {
+      setFormError("Connection error. Please email ahmedakram3ai@gmail.com directly.");
+    } finally {
+      setSendingForm(false);
     }
   };
 
@@ -908,12 +929,16 @@ export default function Home() {
                 </div>
                 <button 
                   type="submit" 
-                  className="self-start px-6 py-3 bg-white text-black rounded-md font-mono text-[11px] uppercase tracking-[0.14em] font-bold hover:bg-dim hover:text-white transition-all duration-200"
+                  disabled={sendingForm}
+                  className="self-start px-6 py-3 bg-white text-black rounded-md font-mono text-[11px] uppercase tracking-[0.14em] font-bold hover:bg-dim hover:text-white transition-all duration-200 disabled:opacity-50 cursor-pointer"
                 >
-                  Send Message →
+                  {sendingForm ? "Sending Message..." : "Send Message →"}
                 </button>
                 {formSubmitted && (
-                  <p className="font-mono text-xs text-green mt-2">✓ Thank you! Message submitted successfully.</p>
+                  <p className="font-mono text-xs text-green mt-2">✓ Thank you! Your message was sent directly to ahmedakram3ai@gmail.com.</p>
+                )}
+                {formError && (
+                  <p className="font-mono text-xs text-rose-400 mt-2">{formError}</p>
                 )}
               </form>
 
