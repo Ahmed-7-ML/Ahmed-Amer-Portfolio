@@ -161,6 +161,30 @@ const certificatesData: CertificateItem[] = [
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("portfolio_theme") as "dark" | "light";
+    if (savedTheme) {
+      setTheme(savedTheme);
+      if (savedTheme === "light") {
+        document.body.classList.add("light");
+      } else {
+        document.body.classList.remove("light");
+      }
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("portfolio_theme", nextTheme);
+    if (nextTheme === "light") {
+      document.body.classList.add("light");
+    } else {
+      document.body.classList.remove("light");
+    }
+  };
   const [selectedSkillCategory, setSelectedSkillCategory] = useState("ALL");
   const [selectedCert, setSelectedCert] = useState<CertificateItem | null>(null);
   const [sendingForm, setSendingForm] = useState(false);
@@ -282,7 +306,7 @@ export default function Home() {
     : skillsList.filter(s => s.category === selectedSkillCategory);
 
   return (
-    <div className="overflow-x-hidden w-full bg-black text-[#efefef] font-sans antialiased min-h-screen">
+    <div className="overflow-x-hidden w-full bg-theme text-theme font-sans antialiased min-h-screen transition-colors duration-300">
       
       {/* -------------------- LOADER OVERLAY -------------------- */}
       {loading && (
@@ -332,9 +356,30 @@ export default function Home() {
           <a href="#certs" className="font-mono text-[11px] uppercase tracking-[0.14em] text-dim hover:text-white transition-colors duration-200">Certificates</a>
           <a href="#contact" className="font-mono text-[11px] uppercase tracking-[0.14em] text-dim hover:text-white transition-colors duration-200">Contact</a>
         </div>
-        <div className="flex items-center gap-2 font-mono text-[12px] text-[#888] tracking-widest ml-auto md:ml-0">
-          <span className="w-[10px] h-[10px] rounded-full bg-green shadow-[0_0_8px_#4ade80] animate-blink"></span>
-          <span className="inline">Available for Hire</span>
+        <div className="flex items-center gap-4 ml-auto md:ml-0">
+          {/* Theme Switcher Button */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-card text-xs font-mono text-dim hover:text-theme hover:border-border2 transition-all cursor-pointer shadow-sm"
+          >
+            {theme === "dark" ? (
+              <>
+                <span className="text-yellow-400">☀️</span>
+                <span className="font-semibold">Light</span>
+              </>
+            ) : (
+              <>
+                <span className="text-indigo-500">🌙</span>
+                <span className="font-semibold">Dark</span>
+              </>
+            )}
+          </button>
+
+          <div className="flex items-center gap-2 font-mono text-[12px] text-dim tracking-widest">
+            <span className="w-[10px] h-[10px] rounded-full bg-green shadow-[0_0_8px_#4ade80] animate-blink"></span>
+            <span className="hidden sm:inline">Available for Hire</span>
+          </div>
         </div>
       </nav>
 

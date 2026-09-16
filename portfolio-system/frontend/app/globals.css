@@ -1,23 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080808;
-  --foreground: #efefef;
+  --bg: #080808;
+  --text: #efefef;
   --card: #111111;
   --card2: #161616;
+  --muted: #141414;
   --border: #222222;
   --border2: #333333;
   --dim: #888888;
-  --ghost: #262626;
-  --muted: #141414;
+  --ghost: #2a2a2a;
   --green: #4ade80;
+  --nav-bg: rgba(8, 8, 8, 0.85);
+  --input-bg: #111111;
+  --input-text: #ffffff;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: #ffffff;
+  --card2: #f1f5f9;
+  --muted: #f1f5f9;
+  --border: #e2e8f0;
+  --border2: #cbd5e1;
+  --dim: #64748b;
+  --ghost: #cbd5e1;
+  --green: #10b981;
+  --nav-bg: rgba(248, 250, 252, 0.85);
+  --input-bg: #ffffff;
+  --input-text: #0f172a;
 }
 
 body {
-  background-color: #080808;
-  color: #efefef;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-mono {
@@ -32,41 +52,49 @@ body {
   font-family: 'Great Vibes', cursive;
 }
 
-/* Color utility classes for high compatibility */
+/* Dynamic Theme Utility Classes */
+.bg-theme {
+  background-color: var(--bg);
+}
+
+.text-theme {
+  color: var(--text);
+}
+
 .bg-card {
-  background-color: #111111;
+  background-color: var(--card);
 }
 
 .bg-card2 {
-  background-color: #161616;
+  background-color: var(--card2);
 }
 
 .bg-muted {
-  background-color: #141414;
+  background-color: var(--muted);
 }
 
 .border-border {
-  border-color: #222222;
+  border-color: var(--border);
 }
 
 .border-border2 {
-  border-color: #333333;
+  border-color: var(--border2);
 }
 
 .text-dim {
-  color: #888888;
+  color: var(--dim);
 }
 
 .text-ghost {
-  color: #2a2a2a;
+  color: var(--ghost);
 }
 
 .text-green {
-  color: #4ade80;
+  color: var(--green);
 }
 
 .bg-green {
-  background-color: #4ade80;
+  background-color: var(--green);
 }
 
 /* Animations */
@@ -85,32 +113,22 @@ body {
   animation: blink 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@keyframes loaderSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222222;
+  background: var(--border);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444444;
+  background: var(--border2);
 }
+
 
