@@ -165,6 +165,7 @@ export default function Home() {
   const [selectedCert, setSelectedCert] = useState<CertificateItem | null>(null);
   const [sendingForm, setSendingForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [activationNotice, setActivationNotice] = useState("");
   const [formError, setFormError] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
@@ -179,6 +180,7 @@ export default function Home() {
 
     setSendingForm(true);
     setFormError("");
+    setActivationNotice("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -188,9 +190,13 @@ export default function Home() {
       });
       const data = await res.json();
       if (data.success) {
-        setFormSubmitted(true);
+        if (data.needsActivation) {
+          setActivationNotice(data.message);
+        } else {
+          setFormSubmitted(true);
+          setTimeout(() => setFormSubmitted(false), 8000);
+        }
         setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setFormSubmitted(false), 8000);
       } else {
         setFormError(data.error || "Failed to send message. Please try again.");
       }
@@ -936,6 +942,11 @@ export default function Home() {
                 </button>
                 {formSubmitted && (
                   <p className="font-mono text-xs text-green mt-2">✓ Thank you! Your message was sent directly to ahmedakram3ai@gmail.com.</p>
+                )}
+                {activationNotice && (
+                  <p className="font-mono text-xs text-yellow-400 mt-2 bg-yellow-950/40 p-3 rounded border border-yellow-500/30 leading-relaxed">
+                    ⚠️ {activationNotice}
+                  </p>
                 )}
                 {formError && (
                   <p className="font-mono text-xs text-rose-400 mt-2">{formError}</p>
