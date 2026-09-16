@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "([ -d \"portfolio-system/frontend\" ] && cd portfolio-system/frontend || true) && npm run build",
-    "vercel-build": "([ -d \"portfolio-system/frontend\" ] && cd portfolio-system/frontend || true) && npm run build"
+    "build": "cd portfolio-system/frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   }
 }
