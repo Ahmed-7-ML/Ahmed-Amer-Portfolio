@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "buildCommand": "cd portfolio-system/frontend && npm install && npm run build",
-  "outputDirectory": "portfolio-system/frontend/.next"
+  "buildCommand": "([ -d \"portfolio-system/frontend\" ] && cd portfolio-system/frontend || true) && npm run build"
 }

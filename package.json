@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "vercel-build": "cd portfolio-system/frontend && npm install && npm run build"
+    "build": "([ -d \"portfolio-system/frontend\" ] && cd portfolio-system/frontend || true) && npm run build",
+    "vercel-build": "([ -d \"portfolio-system/frontend\" ] && cd portfolio-system/frontend || true) && npm run build"
   }
 }

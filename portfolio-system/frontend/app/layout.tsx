@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Ahmed Akram Amer | AI/ML Engineer & Data Scientist Portfolio",
-  description: "Enterprise-grade portfolio of Ahmed Akram Amer. Specializing in NLP, Generative AI (QueryGuard AI), custom BPE tokenizers, and Computer Vision pipelines.",
-  keywords: ["AI Engineer", "ML Engineer", "Data Scientist", "QueryGuard AI", "Arabic Medical Tokenizer", "Computer Vision", "FastAPI", "Next.js"],
+  title: "Ahmed Akram Amer — AI & MLOps Engineer",
+  description: "AI & MLOps Engineer specialized in RAG systems, LLM fine-tuning, Agentic AI, PyTorch, Docker, FastAPI & end-to-end ML lifecycle automation.",
   authors: [{ name: "Ahmed Akram Amer" }],
-  creator: "Ahmed Akram Amer",
+  keywords: ["AI Engineer", "MLOps", "LLM", "RAG", "Machine Learning", "Python", "FastAPI", "Docker", "PyTorch", "LangChain"],
+  openGraph: {
+    title: "Ahmed Akram Amer — AI & MLOps Engineer",
+    description: "Building production-grade AI systems, MLOps pipelines & LLM apps.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ahmed Akram Amer — AI & MLOps Engineer",
+    description: "Building production-grade AI systems, MLOps pipelines & LLM apps.",
+  },
 };
 
 export default function RootLayout({
@@ -26,13 +25,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth dark`}
-    >
-      <body className="bg-zinc-950 text-zinc-50 min-h-screen font-sans selection:bg-emerald-500/30 selection:text-emerald-400">
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="theme-color" content="#080808" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+      </head>
+      <body className="bg-black text-[#efefef] font-sans antialiased overflow-x-hidden">
         {children}
       </body>
     </html>
   );
 }
+
