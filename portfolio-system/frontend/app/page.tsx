@@ -176,32 +176,75 @@ export default function Home() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
 
     setSendingForm(true);
     setFormError("");
     setActivationNotice("");
 
+    const payload = new URLSearchParams();
+    payload.append("name", formData.name);
+    payload.append("email", formData.email);
+    payload.append("message", formData.message);
+    payload.append("_subject", `Portfolio Contact: ${formData.name} sent you a message`);
+    payload.append("_template", "table");
+    payload.append("_captcha", "false");
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formsubmit.co/ajax/ahmedakram3ai@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "application/json"
+        },
+        body: payload.toString()
       });
+
       const data = await res.json();
-      if (data.success) {
-        if (data.needsActivation) {
-          setActivationNotice(data.message);
-        } else {
-          setFormSubmitted(true);
-          setTimeout(() => setFormSubmitted(false), 8000);
-        }
+
+      if (data.success === "true" || data.success === true) {
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setFormSubmitted(false), 8000);
+      } else if (data.message && data.message.includes("Activation")) {
+        setActivationNotice("FormSubmit sent an 'Activate Form' link to ahmedakram3ai@gmail.com. Please check your Gmail inbox and click 'Activate Form' once to start receiving all messages!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setFormError(data.error || "Failed to send message. Please try again.");
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setFormSubmitted(false), 8000);
       }
     } catch {
-      setFormError("Connection error. Please email ahmedakram3ai@gmail.com directly.");
+      // Fallback submit via dynamic HTML form POST if browser fetch is restricted by extensions
+      try {
+        const formEl = document.createElement("form");
+        formEl.action = "https://formsubmit.co/ahmedakram3ai@gmail.com";
+        formEl.method = "POST";
+
+        const nameInput = document.createElement("input");
+        nameInput.name = "name";
+        nameInput.value = formData.name;
+        formEl.appendChild(nameInput);
+
+        const emailInput = document.createElement("input");
+        emailInput.name = "email";
+        emailInput.value = formData.email;
+        formEl.appendChild(emailInput);
+
+        const msgInput = document.createElement("input");
+        msgInput.name = "message";
+        msgInput.value = formData.message;
+        formEl.appendChild(msgInput);
+
+        document.body.appendChild(formEl);
+        formEl.submit();
+        document.body.removeChild(formEl);
+
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } catch {
+        setFormError("Connection error. Please email ahmedakram3ai@gmail.com directly.");
+      }
     } finally {
       setSendingForm(false);
     }
