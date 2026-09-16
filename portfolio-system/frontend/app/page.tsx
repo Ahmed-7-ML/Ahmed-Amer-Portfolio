@@ -14,12 +14,20 @@ interface CertificateItem {
 
 const certificatesData: CertificateItem[] = [
   {
-    id: "aws-ai",
+    id: "aws-ai-practitioner",
     title: "AWS Certified AI Practitioner",
     issuer: "Amazon Web Services (AWS)",
     date: "Aug 2026",
-    image: "/certs/AI Engineer.png",
+    image: "/certs/AWS AI Practitioner.png",
     category: "Cloud & AI"
+  },
+  {
+    id: "datacamp-ai-engineer",
+    title: "AI Engineer for Data Scientists Associate",
+    issuer: "DataCamp",
+    date: "Apr 2025",
+    image: "/certs/AI Engineer.png",
+    category: "Artificial Intelligence"
   },
   {
     id: "ml-spec",
@@ -136,7 +144,7 @@ const certificatesData: CertificateItem[] = [
   {
     id: "ai-fund",
     title: "AI Fundamentals Certificate",
-    issuer: "IBM SkillBuild",
+    issuer: "DataCamp",
     date: "2024",
     image: "/certs/AI Fundmentals.png",
     category: "Artificial Intelligence"
@@ -144,7 +152,7 @@ const certificatesData: CertificateItem[] = [
   {
     id: "python-cert",
     title: "Python Programming Foundations",
-    issuer: "Professional Certification",
+    issuer: "HackerRank",
     date: "2024",
     image: "/certs/python.png",
     category: "Python"
@@ -283,7 +291,7 @@ export default function Home() {
                 <a href="https://github.com/Ahmed-7-ML" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] flex items-center justify-center border border-white/20 rounded-xl bg-black/50 text-white hover:bg-white hover:text-black transition-all">
                   <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.37-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"></path></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/ahmed-akram-amer" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] flex items-center justify-center border border-white/20 rounded-xl bg-black/50 text-white hover:bg-white hover:text-black transition-all">
+                <a href="https://www.linkedin.com/in/ahmed-akram-kamel-amer/" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] flex items-center justify-center border border-white/20 rounded-xl bg-black/50 text-white hover:bg-white hover:text-black transition-all">
                   <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>
                 </a>
                 <a href="/AHMED_AKRAM_AMER_CV.pdf" download className="h-[42px] px-4 flex items-center gap-2 border border-white/20 rounded-xl bg-black/50 text-white font-mono text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
@@ -315,7 +323,7 @@ export default function Home() {
             <a href="https://github.com/Ahmed-7-ML" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-[38px] h-[38px] flex items-center justify-center border border-border2 rounded-md bg-card text-dim hover:text-white hover:border-white hover:bg-card2 transition-all duration-200">
               <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.37-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"></path></svg>
             </a>
-            <a href="https://www.linkedin.com/in/ahmed-akram-amer" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-[38px] h-[38px] flex items-center justify-center border border-border2 rounded-md bg-card text-dim hover:text-white hover:border-white hover:bg-card2 transition-all duration-200">
+            <a href="https://www.linkedin.com/in/ahmed-akram-kamel-amer/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-[38px] h-[38px] flex items-center justify-center border border-border2 rounded-md bg-card text-dim hover:text-white hover:border-white hover:bg-card2 transition-all duration-200">
               <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>
             </a>
             <a href="/AHMED_AKRAM_AMER_CV.pdf" download className="h-[38px] px-3.5 flex items-center gap-1.5 border border-border2 rounded-md bg-card text-[#efefef] font-mono text-[10px] uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-200">
